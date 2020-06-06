@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 public class Comment {
 
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	private Long idComment;
+	private int idComment;
 	private String body;
 	
 	@Temporal(TemporalType.TIME)
@@ -25,53 +25,4 @@ public class Comment {
 	
 	@ManyToOne
 	private UserComment utilisateur;
-
-	public Comment() {
-	}
-
-	public Comment(Long idComment, String body, Date date) {
-		this.idComment = idComment;
-		this.body = body;
-		this.date = date;
-	}
-
-	public Long getIdComment() {
-		return idComment;
-	}
-
-	public void setIdComment(Long idComment) {
-		this.idComment = idComment;
-	}
-
-	public String getBody() {
-		return body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public Post getPost() {
-		return post;
-	}
-
-	public void setPost(Post post) {
-		this.post = post;
-	}
-
-	public UserComment getUtilisateur() {
-		return utilisateur;
-	}
-
-	public void setUtilisateur(UserComment utilisateur) {
-		this.utilisateur = utilisateur;
-	}
 }
